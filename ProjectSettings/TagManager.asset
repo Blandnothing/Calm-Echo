@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: creature
+    uniqueID: 4027869265
+    locked: 0
+  - name: wall
+    uniqueID: 3038672771
+    locked: 0
