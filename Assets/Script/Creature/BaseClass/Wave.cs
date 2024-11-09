@@ -25,11 +25,11 @@ public class Wave : MonoBehaviour
             yield return null;
         }
 
+        // 检测接触到的物体
+        DetectWave();
         // 销毁声波对象
         Destroy(gameObject);
 
-        // 检测接触到的物体
-        DetectWave();
     }
 
     private void DetectWave()

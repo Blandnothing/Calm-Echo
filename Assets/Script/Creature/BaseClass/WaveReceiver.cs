@@ -68,3 +68,4 @@ public interface IWaveReceiver
     /// <param name="transmitter">发射声波的物体</param>
     void OnReceiveWave(GameObject transmitter);
 }
+
