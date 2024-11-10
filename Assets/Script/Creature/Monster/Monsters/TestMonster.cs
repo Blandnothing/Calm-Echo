@@ -33,20 +33,24 @@ public class TestMonster : Monster
             .Back()
             .End();
     }
-    public void moveOnPath(List<Vector2Int> path)
+    public void moveOnPath(List<Vector2> path)
     {
         var length = Time.deltaTime * speed;
+        if (path==null)
+        {
+            return;
+        }
         foreach (var pos in path)
         {
             if (Vector2.Distance(transform.position,pos) <= length)
             {
                 var distance = Vector2.Distance(transform.position,pos);
-                transform.position= Vector3.MoveTowards(transform.position, (Vector3Int)pos, distance);
+                transform.position= Vector3.MoveTowards(transform.position, pos, distance);
                 length -= distance;
             }
             else
             {
-                transform.position= Vector3.MoveTowards(transform.position, (Vector3Int)pos, length);
+                transform.position= Vector3.MoveTowards(transform.position, pos, length);
                 length = 0;
                 return;
             }

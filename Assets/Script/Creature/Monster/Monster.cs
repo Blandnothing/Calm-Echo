@@ -32,5 +32,6 @@ public abstract class Monster : Creature,IWaveReceiver
     void Update()
     {
         bhTreeBulider.Tick();
+        
     }
 }
