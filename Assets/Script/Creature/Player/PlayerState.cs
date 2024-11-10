@@ -8,7 +8,7 @@ public class PlayerState
     protected PlayerStateMashine m_mashine;
     private string m_animBoolName;
 
-    protected float m_xInput;
+    protected float m_xInput; 
     protected float m_yInput;
 
     public PlayerState(Player _player, PlayerStateMashine _mashine, string _animBoolName)

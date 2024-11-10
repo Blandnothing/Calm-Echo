@@ -27,7 +27,7 @@ public class CameraMove : MonoBehaviour
         CameraMoveControl();
 
     }
-
+     
     ///¾µÍ·ÒÆ¶¯
     private void CameraMoveControl()
     {

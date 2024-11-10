@@ -9,7 +9,7 @@ public class PlayerBackIdle : PlayerIdleState
     }
 
     public override void Enter()
-    {
+    { 
         base.Enter();
     }
 

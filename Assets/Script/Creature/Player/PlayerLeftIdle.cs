@@ -8,7 +8,7 @@ public class PlayerLeftIdle : PlayerIdleState
     {
     }
 
-    public override void Enter()
+    public override void Enter() 
     {
         base.Enter();
     }

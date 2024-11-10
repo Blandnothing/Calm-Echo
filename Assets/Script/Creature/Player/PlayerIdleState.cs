@@ -28,7 +28,7 @@ public class PlayerIdleState : PlayerState
     private void PlayerMoveControl()
     {
         if (m_xInput > 0)
-            m_player.mashine.ChangeState(m_player.rightMove);
+            m_player.mashine.ChangeState(m_player.rightMove); 
         else if (m_xInput < 0)
             m_player.mashine.ChangeState(m_player.leftMove);
         else if (m_yInput > 0)

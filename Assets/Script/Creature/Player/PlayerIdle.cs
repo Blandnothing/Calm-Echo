@@ -16,7 +16,7 @@ public class PlayerIdle : PlayerIdleState
     public override void Exit()
     {
         base.Exit();
-    }
+    } 
 
     public override void Update()
     {

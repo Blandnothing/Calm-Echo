@@ -54,7 +54,7 @@ public class Player : Creature
         leftMove = new PlayerLeftMove(this, mashine, "Move");
         rightMove = new PlayerRightMove(this, mashine, "Move");
     }
-    private void Start()
+    private void Start() 
     {
         PlayerBaseInformation(100f, 1.5f, 0f);
 

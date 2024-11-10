@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAtMouse 
+public class LookAtMouse  
 {
     public Player player;
 

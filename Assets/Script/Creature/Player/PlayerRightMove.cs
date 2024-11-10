@@ -8,7 +8,7 @@ public class PlayerRightMove : PlayerMove
     {
     }
 
-    public override void Enter()
+    public override void Enter() 
     {
         base.Enter();
     }
