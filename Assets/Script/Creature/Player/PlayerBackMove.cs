@@ -12,7 +12,7 @@ public class PlayerBackMove : PlayerMove
     {
         base.Enter();
     }
-     
+      
     public override void Exit()
     {
         base.Exit();

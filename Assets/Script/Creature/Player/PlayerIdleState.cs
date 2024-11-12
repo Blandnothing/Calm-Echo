@@ -24,7 +24,7 @@ public class PlayerIdleState : PlayerState
 
         PlayerMoveControl();
     }
-
+     
     private void PlayerMoveControl()
     {
         if (m_xInput > 0)
