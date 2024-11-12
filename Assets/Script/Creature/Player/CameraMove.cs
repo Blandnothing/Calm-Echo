@@ -24,7 +24,7 @@ public class CameraMove : MonoBehaviour
         
     void Update() 
     {
-        CameraMoveControl();
+        CameraMoveControl(); 
 
     }
      
