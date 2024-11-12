@@ -21,7 +21,7 @@ public class CameraMove : MonoBehaviour
         mousePosition = Input.mousePosition;
     } 
      
-       
+        
     void Update()
     {
         CameraMoveControl();
