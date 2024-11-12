@@ -7,45 +7,20 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class AStar:MonoBehaviour
+[Serializable]
+public class AStar
 {
-    public static AStar Instance { get; private set; }
-
-    private void Awake()
+    public AStar(List<Tilemap> maps)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        for (int i = -30; i <= 30; i++)
-        {
-            for (int j = -30; j <= 30; j++)
-            {
-                Debug.Log((i,j,IsWalkable(new Vector2Int(i,j))));
-            }
-        }
-      
+        this.maps = maps;
     }
+    [SerializeField]
    public List<Tilemap> maps;
-   public Transform selfTransform;
-   public static int openListFull = 1000;
+   public static int openListFull=1000;
    private PriorityQueue<AStarCompare> openList=new (openListFull);
    private HashSet<AStarNode> closedList=new ();
 
-   class AStarInfo
-   {
-       public AStarNode parent;
-       public float HCost;
-       public float GCost;
-       public float FCost => HCost + GCost;
-       public AStarInfo(float gCost,float hCost,AStarNode parent)
-       {
-           this.GCost = gCost;
-           this.HCost = hCost;
-           this.parent = parent;
-       }
-
-   }
+  
 
    class AStarCompare :IComparable<AStarCompare>
    {
@@ -117,11 +92,11 @@ public class AStar:MonoBehaviour
                         Astardic.Add(neighbor,new AStarInfo( newMovementCostToNeighbor,GetDistance(neighbor, goalNode),currentNode));
                     }
                     
-                        openList.PushHeap(new (neighbor,Astardic[neighbor].FCost));
+                    openList.PushHeap(new (neighbor,Astardic[neighbor].FCost));
                 }
             }
         }
-    // 未找到路径
+        // 未找到路径
         return null; 
     }
     
@@ -152,7 +127,7 @@ public class AStar:MonoBehaviour
         {
             return null;
         }
-        List<Vector2> res=new List<Vector2>();
+        List<Vector2> res=new ();
         for (int i = 0; i < list.Count; i++)
         {
             res.Add(list[i]+new Vector2(0.5f,0.5f));
@@ -163,7 +138,7 @@ public class AStar:MonoBehaviour
     // 获取邻居节点
     private List<AStarNode> GetNeighbors(AStarNode node)
     {
-        List<AStarNode> neighbors = new List<AStarNode>();
+        List<AStarNode> neighbors = new ();
 
         Vector2Int[] directions = {
             Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right

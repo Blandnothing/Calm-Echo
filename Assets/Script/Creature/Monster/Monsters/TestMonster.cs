@@ -24,7 +24,7 @@ public class TestMonster : Monster
                 var distance = Vector3.Distance(playerPosition,monsterPosition);
                 return distance < limitedDistance;
             })
-                     .Task(new Chase(transform,playerTransform,moveOnPath))
+                     .Task(new Chase(transform,playerTransform,moveOnPath,FindPath))
                 .Back()
                 .Sequence()
                     .Task(new GetBack())

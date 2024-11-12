@@ -821,8 +821,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Calm Echo
-  metroPackageVersion: 
+  metroPackageName: CalmEcho
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -830,7 +830,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Calm Echo
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Calm Echo
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
