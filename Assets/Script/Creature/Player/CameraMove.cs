@@ -20,7 +20,7 @@ public class CameraMove : MonoBehaviour
         //获取鼠标初始位置
         mousePosition = Input.mousePosition;
     }
-
+     
      
     void Update()
     {
