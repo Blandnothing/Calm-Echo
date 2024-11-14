@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 1760779612}
   - component: {fileID: 1760779611}
   - component: {fileID: 1760779615}
+  - component: {fileID: 1760779616}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -350,7 +351,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12.124355
+  orthographic size: 6.8729362
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -380,12 +381,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1787453431}
   cameraToUse: {fileID: 1760779613}
-  cameraMoveSpeed: 0.3
+  cameraMoveSpeed: 0.05
   mousePosition: {x: 0, y: 0, z: 0}
   mouseCurrentPosition: {x: 0, y: 0, z: 0}
   mouseMovePosition: {x: 0, y: 0, z: 0}
-  maxDistance: 50
+  maxDistance: 100
   distance: 0
+--- !u!114 &1760779616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760779608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2142977c4e5160c4abecbdfd5c79c98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1787453431}
+  offset: {x: 0, y: 0, z: -10}
+  smoothSpeed: 0.5
 --- !u!1 &1787453427
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,11 @@ public class CameraMove : MonoBehaviour
     public Camera cameraToUse;
 
     [Header("CameraMove Info")]
-    [SerializeField] public float cameraMoveSpeed = 0.3f;//镜头移动速度
+    [SerializeField] public float cameraMoveSpeed = 0.05f;//镜头移动速度
     [SerializeField] private Vector3 mousePosition; // 上一次鼠标位置，用于计算鼠标移动
     [SerializeField] private Vector3 mouseCurrentPosition;//当前位置
     [SerializeField] protected Vector3 mouseMovePosition;//鼠标偏移位置
-    [SerializeField] private float maxDistance;//最大屏幕偏移距离
+    [SerializeField] private float maxDistance=100f;//最大屏幕偏移距离
     [SerializeField] private float distance;//人物和摄像头的屏幕距离差
 
 
@@ -29,7 +29,7 @@ public class CameraMove : MonoBehaviour
 
     void Update()
     {
-        CameraMoveControl();
+        //CameraMoveControl();
 
     }
 
@@ -67,4 +67,37 @@ public class CameraMove : MonoBehaviour
 
     }
 
+
+    public Vector3 CameraOffset()
+    {
+        if (Input.mousePosition != mousePosition)
+        {
+            mouseCurrentPosition = Input.mousePosition;
+
+            //鼠标偏移
+            mouseMovePosition = mouseCurrentPosition - mousePosition;
+
+            // 获取摄像头的屏幕位置
+            Vector3 cameraScreenPosition = cameraToUse.WorldToScreenPoint(transform.position);
+
+            //获取人物的屏幕位置 
+            Vector3 characterScreenPosition = cameraToUse.WorldToScreenPoint(player.position);
+
+            // 计算从人物到摄像头位置的向量
+            Vector2 directionToMouse = cameraScreenPosition - characterScreenPosition;
+
+            //向量转换成float
+            distance = directionToMouse.magnitude;
+
+            //拖动摄像头
+            if (distance <= maxDistance)
+                return mouseMovePosition * cameraMoveSpeed * Time.deltaTime;
+
+            mousePosition = mouseCurrentPosition;
+
+            return Vector3.zero;
+        }
+        return Vector3.zero;
+
+    }
 }
