@@ -60,7 +60,7 @@ public class Player : Creature
 
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        transf = transform.Find("Main Camera").GetComponent<Transform>();
+       // transf = transform.Find("Main Camera").GetComponent<Transform>();
 
         mashine.Initialized(idle);
     }

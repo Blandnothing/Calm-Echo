@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 1760779613}
   - component: {fileID: 1760779612}
   - component: {fileID: 1760779611}
-  - component: {fileID: 1760779610}
+  - component: {fileID: 1760779615}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -257,29 +257,12 @@ Transform:
   m_GameObject: {fileID: 1760779608}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.63676834, y: -0.6518074, z: -9.972646}
+  m_LocalPosition: {x: -0.63676834, y: 0.6518074, z: -10.027354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1787453431}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1760779610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760779608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d785f509492dd943910dec0064f2878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1787453431}
-  cameraMoveSpeed: 0.3
-  mousePosition: {x: 0, y: 0, z: 0}
-  mouseCurrentPosition: {x: 0, y: 0, z: 0}
-  mouseMovePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1760779611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +350,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 12.124355
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -383,6 +366,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1760779615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760779608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84c1ea5f222e0243a44e9c35c431509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1787453431}
+  cameraToUse: {fileID: 1760779613}
+  cameraMoveSpeed: 0.3
+  mousePosition: {x: 0, y: 0, z: 0}
+  mouseCurrentPosition: {x: 0, y: 0, z: 0}
+  mouseMovePosition: {x: 0, y: 0, z: 0}
+  maxDistance: 50
+  distance: 0
 --- !u!1 &1787453427
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +496,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1760779609}
   - {fileID: 931917116}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -501,4 +503,5 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1760779609}
   - {fileID: 1787453431}
