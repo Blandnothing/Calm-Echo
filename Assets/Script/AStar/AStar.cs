@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -153,8 +154,7 @@ public class AStar
 
         return neighbors;
     }
-
-    // 获取或创建节点
+    
  
 
     // 判断Tile是否可通行
@@ -163,7 +163,7 @@ public class AStar
         foreach (Tilemap tilemap in maps)
         {
             TileBase tile = tilemap.GetTile((Vector3Int)position);
-            if (tile != null)
+            if (!object.ReferenceEquals(tile,null))
             {
                 return false;
                 
