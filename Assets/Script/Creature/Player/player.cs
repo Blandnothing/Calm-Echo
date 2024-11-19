@@ -7,9 +7,12 @@ public class Player : Creature
     [Header("Health Info")]
     [SerializeField] private float m_Recovery_percentage = 0.01f;
 
+
     [Header("Input Info")]
     [SerializeField] public float xInput;
     [SerializeField] public float yInput;
+
+    [SerializeField] public Vector2 playerFaceDirection;//人物朝向(与鼠标方向)
     #region Components 
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -78,6 +81,7 @@ public class Player : Creature
 
         BreathReturnBlood(this);
 
+        ChangeThrowDirection(lookAtMouse.IdleControl().x, lookAtMouse.IdleControl().y);
     }
 
     private void Input()
@@ -123,4 +127,6 @@ public class Player : Creature
         }
     }
 
+    //更改投掷方向
+    private void ChangeThrowDirection(float x, float y) => playerFaceDirection = new Vector2(x, y).normalized;
 }

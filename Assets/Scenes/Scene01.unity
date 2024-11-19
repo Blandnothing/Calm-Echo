@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1787453431}
   cameraToUse: {fileID: 1760779613}
-  cameraMoveSpeed: 0.05
+  cameraMoveSpeed: 0.3
   mousePosition: {x: 0, y: 0, z: 0}
   mouseCurrentPosition: {x: 0, y: 0, z: 0}
   mouseMovePosition: {x: 0, y: 0, z: 0}
@@ -413,7 +413,8 @@ GameObject:
   - component: {fileID: 1787453431}
   - component: {fileID: 1787453430}
   - component: {fileID: 1787453429}
-  - component: {fileID: 1787453428}
+  - component: {fileID: 1787453433}
+  - component: {fileID: 1787453432}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -421,22 +422,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1787453428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787453427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aaf621370b4316488a3afc791635126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  m_Recovery_percentage: 0.01
-  xInput: 0
-  yInput: 0
 --- !u!70 &1787453429
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -515,6 +500,38 @@ Transform:
   - {fileID: 931917116}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1787453432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787453427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b5df0fac1333a40b4ab848533b3edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1787453433}
+  m_ThrowForce: 5
+  m_ThrowDirection: {x: 0, y: 0}
+--- !u!114 &1787453433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787453427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaf621370b4316488a3afc791635126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  m_Recovery_percentage: 0.01
+  xInput: 0
+  yInput: 0
+  playerFaceDirection: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
