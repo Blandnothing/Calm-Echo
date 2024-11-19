@@ -515,6 +515,7 @@ MonoBehaviour:
   player: {fileID: 1787453433}
   m_ThrowForce: 5
   m_ThrowDirection: {x: 0, y: 0}
+  m_IsHold: 0
 --- !u!114 &1787453433
 MonoBehaviour:
   m_ObjectHideFlags: 0

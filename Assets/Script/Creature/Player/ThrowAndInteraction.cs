@@ -21,11 +21,17 @@ public class ThrowAndInteraction : MonoBehaviour
         m_ThrowDirection = player.playerFaceDirection;
 
         Throw ();
+        interaction();
     }
 
     private void Throw()
     {
-       // if(Input.GetKeyDown(KeyCode.R) && m_IsHold )
+       // if(Input.GetKeyDown(KeyCode.F) && m_IsHold )
 
+    }
+
+    private void interaction()
+    {
+        //if(Input.GetKeyDown(KeyCode.E))
     }
 }
