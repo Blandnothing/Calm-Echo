@@ -56,6 +56,12 @@ namespace NBehaviorTree
             return this;
         }
 
+        public BehaviorTreeBuilder PrioritySelector()
+        {
+            AddBehavior(new PrioritySelector());
+            return this;
+        }
+
         public BehaviorTreeBuilder Task(Task task)
         {
             AddBehavior(task);

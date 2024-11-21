@@ -74,7 +74,7 @@ public class AStar
             
             foreach (AStarNode neighbor in GetNeighbors(currentNode))
             {
-                if (closedList.Contains(neighbor) || !IsWalkable(neighbor.position))
+                if (closedList.Contains(neighbor) || !CanWalkMap.instance.IsWalkable(neighbor.position))
                 {
                     continue;
                 }
@@ -158,19 +158,7 @@ public class AStar
  
 
     // 判断Tile是否可通行
-    private bool IsWalkable(Vector2Int position)
-    {  
-        foreach (Tilemap tilemap in maps)
-        {
-            TileBase tile = tilemap.GetTile((Vector3Int)position);
-            if (!object.ReferenceEquals(tile,null))
-            {
-                return false;
-                
-            }
-        }
-        return true;
-    }
+  
 
     // 计算两个节点之间的距离
     private float GetDistance(AStarNode a, AStarNode b)
