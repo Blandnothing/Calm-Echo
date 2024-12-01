@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Creature
+public class Player : Creature,IWaveReceiver
 {
     [Header("Health Info")]
     [SerializeField] private float m_Recovery_percentage = 0.01f;
@@ -129,4 +129,12 @@ public class Player : Creature
 
     //更改投掷方向
     private void ChangeThrowDirection(float x, float y) => playerFaceDirection = new Vector2(x, y).normalized;
+
+    //接收到声波后的反应，目前不知道会有什么反应，没写
+    public void OnReceiveWave(GameObject transmitter)
+    {
+
+    }
+    //因为m_speed外部不让动，这里用函数修改
+    public void ChangeSpeed(float newSpeed) => m_speed = newSpeed;
 }
