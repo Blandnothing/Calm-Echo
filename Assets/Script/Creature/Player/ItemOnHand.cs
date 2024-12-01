@@ -50,9 +50,11 @@ public class ItemOnHand : MonoBehaviour
 
             if (prefab != null)
             {
-                if (prefab.GetComponent<InventoryManager>() != null)
+                if (prefab.GetComponent<ItemOnWorld>() != null)
                 {
-                    itemPrefab = prefab.GetComponent<ItemOnWorld>().thisItem == item ? prefab : null;
+                   GameObject p = prefab.GetComponent<ItemOnWorld>().thisItem == item ? prefab : null;
+
+                    this.itemPrefab = p;
                 }
             }
         }
